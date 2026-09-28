@@ -1,5 +1,5 @@
-import java.util.Properties
 import java.io.FileInputStream
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.library)
@@ -20,22 +20,21 @@ android {
 
     defaultConfig {
         minSdk = 26
-        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-    release {
-        isMinifyEnabled = false
-        proguardFiles(
-            getDefaultProguardFile("proguard-android-optimize.txt"),
-            "proguard-rules.pro"
-        )
-    }
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
+        }
 
-    debug {
-        isMinifyEnabled = false
+        debug {
+            isMinifyEnabled = false
+        }
     }
-}
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -65,7 +64,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.Hiaashuu"
                 artifactId = "testerbuds-sdk"
-                version = "1.0.1"
+                version = "1.0.2"
             }
         }
     }
