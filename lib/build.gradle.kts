@@ -26,7 +26,6 @@ android {
     buildTypes {
     release {
         isMinifyEnabled = false
-        isDebuggable = false
         proguardFiles(
             getDefaultProguardFile("proguard-android-optimize.txt"),
             "proguard-rules.pro"
@@ -66,7 +65,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.Hiaashuu"
                 artifactId = "testerbuds-sdk"
-                version = "1.0.0"
+                version = "1.0.1"
             }
         }
     }
